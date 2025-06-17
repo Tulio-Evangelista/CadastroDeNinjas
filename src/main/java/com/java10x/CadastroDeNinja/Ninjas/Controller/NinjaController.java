@@ -4,6 +4,7 @@ import com.java10x.CadastroDeNinja.Ninjas.NinjaModel.NinjaModel;
 import com.java10x.CadastroDeNinja.Ninjas.NinjaService.NinjaService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,9 +35,9 @@ public class NinjaController {
     }
 
     //procurar ninja por id(CREATE)
-    @GetMapping("/procurarNinjaPorId")
-    public String procurarNinjaPorId() {
-        return "Ninja encontrado com sucesso!";
+    @GetMapping("/MostrarNinja/{id}")
+    public NinjaModel procurarNinjaPorId(@PathVariable Long id) {
+        return ninjaService.procurarNinjaPorId(id);
     }
 
     //mostrar todos os ninjas(READ)

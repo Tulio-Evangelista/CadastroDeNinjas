@@ -5,6 +5,7 @@ import com.java10x.CadastroDeNinja.Missoes.MissoesModel.MissoesModel;
 import com.java10x.CadastroDeNinja.Missoes.MissoesService.MissoesService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +24,11 @@ public class MissoesController {
     @PostMapping("/criarMissao")
     public MissoesModel criarMissao() {
         return missoesService.criarMissao(new MissoesModel());
+    };
+
+    @GetMapping("/MostrarMissao/{id}")
+    public MissoesModel procurarMissaoPorId(@PathVariable Long id) {
+        return missoesService.procurarMissaoPorId(id);
     };
 
 

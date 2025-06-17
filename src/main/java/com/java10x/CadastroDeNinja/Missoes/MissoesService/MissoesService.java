@@ -6,6 +6,7 @@ import com.java10x.CadastroDeNinja.Missoes.MissoesRepository.MissoesRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MissoesService {
@@ -28,6 +29,12 @@ public class MissoesService {
     //alterar missão
     public MissoesModel alterarMissao(MissoesModel missoes) {
         return missoesRepository.save(missoes);
+    }
+
+    //procurar missão por id
+    public MissoesModel procurarMissaoPorId(Long id) {
+        Optional<MissoesModel> missoesPorId = missoesRepository.findById(id);
+        return missoesPorId.orElse(null);
     }
 
 }
