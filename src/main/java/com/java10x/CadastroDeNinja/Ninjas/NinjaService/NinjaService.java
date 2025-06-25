@@ -29,8 +29,12 @@ public class NinjaService {
     }
 
     //Alterar dados do ninja
-    public NinjaModel alterarNinja(NinjaModel ninja) {
-        return ninjaRepository.save(ninja);
+    public NinjaModel alterarNinja(Long id, NinjaModel ninjaAlterado) {
+        if (ninjaRepository.existsById(id)) {
+            ninjaAlterado.setId(id);
+            return ninjaRepository.save(ninjaAlterado);
+        }
+        return null;
     }
 
     //Procurar ninja por id
@@ -40,7 +44,10 @@ public class NinjaService {
     }
 
 
-
+    //deletar ninja por id
+    public void deletarNinjaPorId(Long id) {
+        ninjaRepository.deleteById(id);
+    }
 
 
 

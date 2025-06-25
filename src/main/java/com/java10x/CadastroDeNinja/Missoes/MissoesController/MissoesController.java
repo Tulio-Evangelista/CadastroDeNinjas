@@ -39,15 +39,15 @@ public class MissoesController {
         return missoesService.listarTodasMissoes();
     };
 
-    @PostMapping("/alterarMissao")
-    public MissoesModel alterarMissao() {
-        return missoesService.alterarMissao(new MissoesModel());
+    @PostMapping("/alterarMissao/{id}")
+    public MissoesModel alterarMissao(@PathVariable long id, @RequestBody MissoesModel missaoAlterada) {
+        return missoesService.alterarMissao(id, missaoAlterada);
     };
 
 
-    @DeleteMapping("/deletarMissao")
-    public MissoesModel deletarMissao() {
-        return missoesService.alterarMissao(new MissoesModel());
+    @DeleteMapping("/deletarMissao/{id}")
+    public void deletarMissaoPorId(@PathVariable Long id) {
+        missoesService.deletarMissaoPorId(id);
     };
 
 }

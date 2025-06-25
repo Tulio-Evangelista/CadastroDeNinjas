@@ -27,14 +27,23 @@ public class MissoesService {
     }
 
     //alterar missão
-    public MissoesModel alterarMissao(MissoesModel missoes) {
-        return missoesRepository.save(missoes);
+    public MissoesModel alterarMissao( Long id  ,MissoesModel missaoAlterada) {
+        if (missoesRepository.existsById(id)) {
+            missaoAlterada.setId(id);
+            return missoesRepository.save(missaoAlterada);
+        }
+        return null;
     }
 
     //procurar missão por id
     public MissoesModel procurarMissaoPorId(Long id) {
         Optional<MissoesModel> missoesPorId = missoesRepository.findById(id);
         return missoesPorId.orElse(null);
+    }
+
+    //deletar missão por id
+    public void deletarMissaoPorId(Long id) {
+        missoesRepository.deleteById(id);
     }
 
 }

@@ -1,11 +1,13 @@
 package com.java10x.CadastroDeNinja.Ninjas.Controller;
 
 import com.java10x.CadastroDeNinja.Ninjas.NinjaModel.NinjaModel;
+import com.java10x.CadastroDeNinja.Ninjas.NinjaRepository.NinjaRepository;
 import com.java10x.CadastroDeNinja.Ninjas.NinjaService.NinjaService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,15 +50,15 @@ public class NinjaController {
     }
 
     //alterar dados do ninja(UPDATE)
-    @PostMapping("/alterarNinja")
-    public NinjaModel alterarNinja() {
-        return ninjaService.alterarNinja(new NinjaModel());
+    @PutMapping("/alterarNinja/{id}")
+    public NinjaModel alterarNinja(@PathVariable long id,@RequestBody NinjaModel ninjaAlterado) {
+        return ninjaService.alterarNinja(id, ninjaAlterado);
     }
 
     //deletar ninja por id(DELETE)
-    @DeleteMapping("/deletarNinja")
-    public String deletarNinja() {
-        return "Ninja deletado com sucesso!";
+    @DeleteMapping("/deletarNinja/{id}")
+    public void deletarNinjaPorId(@PathVariable Long id) {
+        ninjaService.deletarNinjaPorId(id);
     }
 
 
