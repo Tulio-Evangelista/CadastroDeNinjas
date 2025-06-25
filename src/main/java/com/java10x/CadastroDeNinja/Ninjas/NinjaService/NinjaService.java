@@ -23,16 +23,19 @@ public class NinjaService {
 
     }
 
+    //Criar um novo ninja
     public NinjaModel criarNinja(NinjaModel ninja) {
         return ninjaRepository.save(ninja);
     }
 
+    //Alterar dados do ninja
     public NinjaModel alterarNinja(NinjaModel ninja) {
         return ninjaRepository.save(ninja);
     }
 
-public NinjaModel procurarNinjaPorId(Long id) {
-    Optional<NinjaModel> ninjaPorId = ninjaRepository.findById(id);
+    //Procurar ninja por id
+    public NinjaModel procurarNinjaPorId(Long id) {
+        Optional<NinjaModel> ninjaPorId = ninjaRepository.findById(id);
         return ninjaPorId.orElse(null);
     }
 
