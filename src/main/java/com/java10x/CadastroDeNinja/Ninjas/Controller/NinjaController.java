@@ -2,7 +2,6 @@ package com.java10x.CadastroDeNinja.Ninjas.Controller;
 
 import com.java10x.CadastroDeNinja.Ninjas.DTO.NinjaDTO;
 import com.java10x.CadastroDeNinja.Ninjas.NinjaModel.NinjaModel;
-import com.java10x.CadastroDeNinja.Ninjas.NinjaRepository.NinjaRepository;
 import com.java10x.CadastroDeNinja.Ninjas.NinjaService.NinjaService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,20 +39,20 @@ public class NinjaController {
 
     //procurar ninja por id(CREATE)
     @GetMapping("/MostrarNinja/{id}")
-    public NinjaModel procurarNinjaPorId(@PathVariable Long id) {
+    public NinjaDTO procurarNinjaPorId(@PathVariable Long id) {
         return ninjaService.procurarNinjaPorId(id);
     }
 
     //mostrar todos os ninjas(READ)
     @GetMapping("/mostrarTodosNinjas")
-    public List<NinjaModel> mostrarTodosNinjas() {
+    public List<NinjaDTO> mostrarTodosNinjas() {
         return ninjaService.mostrarTodosNinjas();
     }
 
     //alterar dados do ninja(UPDATE)
     @PutMapping("/alterarNinja/{id}")
-    public NinjaModel alterarNinja(@PathVariable long id,@RequestBody NinjaModel ninjaAlterado) {
-        return ninjaService.alterarNinja(id, ninjaAlterado);
+    public NinjaDTO alterarNinja(@PathVariable long id,@RequestBody NinjaDTO ninjaDTO) {
+        return ninjaService.alterarNinja(id, ninjaDTO);
     }
 
     //deletar ninja por id(DELETE)
