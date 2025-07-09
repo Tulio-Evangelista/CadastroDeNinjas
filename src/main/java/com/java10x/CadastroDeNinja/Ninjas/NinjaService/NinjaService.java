@@ -4,6 +4,7 @@ import com.java10x.CadastroDeNinja.Ninjas.DTO.NinjaDTO;
 import com.java10x.CadastroDeNinja.Ninjas.Mapper.NinjaMapper;
 import com.java10x.CadastroDeNinja.Ninjas.NinjaModel.NinjaModel;
 import com.java10x.CadastroDeNinja.Ninjas.NinjaRepository.NinjaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,12 +15,13 @@ import java.util.stream.Collectors;
 public class NinjaService {
 
 
-    private NinjaRepository ninjaRepository;
-    private NinjaMapper ninjaMapper;
+    private final NinjaRepository ninjaRepository;
+    private final NinjaMapper ninjaMapper;
 
-
-    public NinjaService(NinjaRepository ninjaRepository) {
+    @Autowired
+    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper) {
         this.ninjaRepository = ninjaRepository;
+        this.ninjaMapper = ninjaMapper;
     }
 
     //Listar todos os ninjas
