@@ -26,8 +26,10 @@ public class NinjaModel {
     @Column(unique = true)
     private String email;
 
+    @Column(name = "aldeia")
     private String aldeia;
 
+    @Column(name = "idade")
     private int idade;
 
     //uma unica missao para cada ninja

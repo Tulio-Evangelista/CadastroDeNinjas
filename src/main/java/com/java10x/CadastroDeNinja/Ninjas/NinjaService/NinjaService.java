@@ -1,5 +1,7 @@
 package com.java10x.CadastroDeNinja.Ninjas.NinjaService;
 
+import com.java10x.CadastroDeNinja.Ninjas.DTO.NinjaDTO;
+import com.java10x.CadastroDeNinja.Ninjas.Mapper.NinjaMapper;
 import com.java10x.CadastroDeNinja.Ninjas.NinjaModel.NinjaModel;
 import com.java10x.CadastroDeNinja.Ninjas.NinjaRepository.NinjaRepository;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,8 @@ public class NinjaService {
 
 
     private NinjaRepository ninjaRepository;
+    private NinjaMapper ninjaMapper;
+
 
     public NinjaService(NinjaRepository ninjaRepository) {
         this.ninjaRepository = ninjaRepository;
@@ -24,8 +28,10 @@ public class NinjaService {
     }
 
     //Criar um novo ninja
-    public NinjaModel criarNinja(NinjaModel ninja) {
-        return ninjaRepository.save(ninja);
+    public NinjaDTO criarNinja(NinjaDTO ninjaDTO) {
+        NinjaModel ninjaModel = ninjaMapper.map(ninjaDTO);
+        ninjaModel = ninjaRepository.save(ninjaModel);
+        return ninjaMapper.map(ninjaModel);
     }
 
     //Alterar dados do ninja
