@@ -3,10 +3,10 @@ package com.java10x.CadastroDeNinja.Missoes.MissoesService;
 
 import com.java10x.CadastroDeNinja.Missoes.DTO.MissoesDTO;
 import com.java10x.CadastroDeNinja.Missoes.Mapper.MissoesMapper;
-import com.java10x.CadastroDeNinja.Missoes.MissoesModel.MissoesModel;
+import com.java10x.CadastroDeNinja.Missoes.MissoesModel;
 import com.java10x.CadastroDeNinja.Missoes.MissoesRepository.MissoesRepository;
-import com.java10x.CadastroDeNinja.Ninjas.NinjaModel.NinjaModel;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 import java.util.Optional;
