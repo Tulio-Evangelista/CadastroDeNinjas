@@ -2,8 +2,8 @@ package com.java10x.CadastroDeNinja.Missoes.MissoesController;
 
 
 import com.java10x.CadastroDeNinja.Missoes.DTO.MissoesDTO;
-import com.java10x.CadastroDeNinja.Missoes.MissoesModel.MissoesModel;
 import com.java10x.CadastroDeNinja.Missoes.MissoesService.MissoesService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +25,7 @@ public class MissoesController {
     }
 
     @PostMapping("/criarMissao")
+    @Operation(summary = "Cria uma nova missão", description = "Endpoint para criar uma nova missão com os dados fornecidos.")
     public ResponseEntity<String> criarMissao(@RequestBody MissoesDTO missoesDTO) {
         MissoesDTO novaMissao = missoesService.criarMissao(missoesDTO);
 
@@ -33,6 +34,7 @@ public class MissoesController {
     };
 
     @GetMapping("/MostrarMissao/{id}")
+    @Operation(summary = "Busca uma missão pelo ID", description = "Endpoint para buscar uma missão específica pelo seu ID.")
     public ResponseEntity<String> procurarMissaoPorId(@PathVariable Long id) {
         if (missoesService.procurarMissaoPorId(id) != null) {
             return ResponseEntity.status(200).body("Missão encontrada: " + missoesService.procurarMissaoPorId(id).toString() + " (ID): " + id);
@@ -45,12 +47,14 @@ public class MissoesController {
 
 
     @GetMapping("/mostrarTodasMissoes")
+    @Operation(summary = "Lista todas as missões", description = "Endpoint para listar todas as missões cadastradas.")
     public  ResponseEntity<List<MissoesDTO>>  mostrarTodasMissoes() {
        List<MissoesDTO> listaMissoes = missoesService.listarTodasMissoes();
         return ResponseEntity.ok(listaMissoes);
     };
 
     @PostMapping("/alterarMissao/{id}")
+    @Operation(summary = "Altera uma missão existente", description = "Endpoint para alterar os dados de uma missão existente pelo seu ID.")
     public ResponseEntity<String> alterarMissao(@PathVariable long id, @RequestBody MissoesDTO missaoAlterada) {
         if (missoesService.procurarMissaoPorId(id) != null) {
             return ResponseEntity.status(200).body("Missão alterada com sucesso: " + missoesService.alterarMissao(id, missaoAlterada).toString() + " (ID): " + id);
@@ -61,6 +65,7 @@ public class MissoesController {
     };
 
     @DeleteMapping("/deletarMissao/{id}")
+    @Operation(summary = "Deleta uma missão pelo ID", description = "Endpoint para deletar uma missão específica pelo seu ID.")
     public ResponseEntity<String> deletarMissaoPorId(@PathVariable Long id) {
         if (missoesService.procurarMissaoPorId(id) != null) {
             missoesService.deletarMissaoPorId(id);
