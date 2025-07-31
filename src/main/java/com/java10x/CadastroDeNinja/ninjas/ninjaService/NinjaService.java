@@ -1,9 +1,9 @@
-package com.java10x.CadastroDeNinja.Ninjas.NinjaService;
+package com.java10x.CadastroDeNinja.ninjas.ninjaService;
 
-import com.java10x.CadastroDeNinja.Ninjas.DTO.NinjaDTO;
-import com.java10x.CadastroDeNinja.Ninjas.Mapper.NinjaMapper;
-import com.java10x.CadastroDeNinja.Ninjas.NinjaModel.NinjaModel;
-import com.java10x.CadastroDeNinja.Ninjas.NinjaRepository.NinjaRepository;
+import com.java10x.CadastroDeNinja.ninjas.dto.NinjaDTO;
+import com.java10x.CadastroDeNinja.ninjas.mapper.NinjaMapper;
+import com.java10x.CadastroDeNinja.ninjas.ninjaModel.NinjaModel;
+import com.java10x.CadastroDeNinja.ninjas.ninjaRepository.NinjaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

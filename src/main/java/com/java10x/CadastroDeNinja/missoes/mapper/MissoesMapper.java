@@ -1,8 +1,8 @@
-package com.java10x.CadastroDeNinja.Missoes.Mapper;
+package com.java10x.CadastroDeNinja.missoes.mapper;
 
 
-import com.java10x.CadastroDeNinja.Missoes.DTO.MissoesDTO;
-import com.java10x.CadastroDeNinja.Missoes.MissoesModel;
+import com.java10x.CadastroDeNinja.missoes.dto.MissoesDTO;
+import com.java10x.CadastroDeNinja.missoes.MissoesModel;
 import org.springframework.stereotype.Component;
 
 @Component

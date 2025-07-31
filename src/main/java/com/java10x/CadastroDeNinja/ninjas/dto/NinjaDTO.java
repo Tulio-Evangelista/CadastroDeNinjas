@@ -1,6 +1,6 @@
-package com.java10x.CadastroDeNinja.Ninjas.DTO;
+package com.java10x.CadastroDeNinja.ninjas.dto;
 
-import com.java10x.CadastroDeNinja.Missoes.MissoesModel;
+import com.java10x.CadastroDeNinja.missoes.MissoesModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
