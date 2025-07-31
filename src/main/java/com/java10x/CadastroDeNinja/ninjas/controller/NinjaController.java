@@ -1,9 +1,8 @@
-package com.java10x.CadastroDeNinja.Ninjas.Controller;
+package com.java10x.CadastroDeNinja.ninjas.controller;
 
 
-import com.java10x.CadastroDeNinja.Ninjas.DTO.NinjaDTO;
-import com.java10x.CadastroDeNinja.Ninjas.NinjaModel.NinjaModel;
-import com.java10x.CadastroDeNinja.Ninjas.NinjaService.NinjaService;
+import com.java10x.CadastroDeNinja.ninjas.dto.NinjaDTO;
+import com.java10x.CadastroDeNinja.ninjas.ninjaService.NinjaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

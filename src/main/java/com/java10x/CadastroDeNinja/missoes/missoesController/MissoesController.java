@@ -1,8 +1,8 @@
-package com.java10x.CadastroDeNinja.Missoes.MissoesController;
+package com.java10x.CadastroDeNinja.missoes.missoesController;
 
 
-import com.java10x.CadastroDeNinja.Missoes.DTO.MissoesDTO;
-import com.java10x.CadastroDeNinja.Missoes.MissoesService.MissoesService;
+import com.java10x.CadastroDeNinja.missoes.dto.MissoesDTO;
+import com.java10x.CadastroDeNinja.missoes.missoesService.MissoesService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
